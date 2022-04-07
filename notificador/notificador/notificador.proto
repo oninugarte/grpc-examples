@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package notificador;
+
+
+service Notificador {
+    rpc EnviarCorreo (CorreoRequest) returns (CorreoResponse) {}
+}
+
+message CorreoRequest {
+    string destino = 1;
+    string asunto = 2;
+    string mensaje = 3;
+}
+
+message CorreoResponse {
+    bool enviado = 1;
+}
